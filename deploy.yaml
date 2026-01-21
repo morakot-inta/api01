@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api01 
+  labels:
+    app: api01
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api01 
+  template:
+    metadata:
+      labels:
+        app: api01
+    spec:
+      containers:
+      - name: api01
+        image: ghcr.io/morakot-inta/api01:62b94d2 
+        ports:
+        - containerPort: 3000 

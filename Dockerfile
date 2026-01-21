@@ -2,7 +2,7 @@ FROM oven/bun:1
 WORKDIR /app
 COPY . .
 RUN bun install
-CMD ["bun", "run", "start"]
+CMD ["bun", "run", "index.ts"]
 EXPOSE 3000
 
 
